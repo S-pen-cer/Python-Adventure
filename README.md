@@ -1,2 +1,2 @@
 # Python-Adventure
-Python projects both academic and personal
+This is where complementary material for the Python activities are likely placed. Probably screenshots for the most part.
