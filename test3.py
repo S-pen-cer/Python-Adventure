@@ -5,14 +5,15 @@ class Registry:
     staff_info = []
     staff_cost = 0
     staff_receipt = []
-    def __init__(self):
-        Date = input("Please input the date")
-        Name = input("Please input a name")
-        Staff_ID = input("Please input a Staff ID")
-        Order_Status = input("Please input current status of order")
+    def __init__(self):#
+        self.Date = input("Please input the date")
+        self.Name = input("Please input a name")
+        self.Staff_ID = input("Please input a Staff ID")
+        self.Order_Status = input("Please input current status of order")
         Registry.request_count += 1
-        info_set = [Date, Name, Staff_ID, Registry.request_count, Order_Status]
+        info_set = [self.Date, self.Name, self.Staff_ID, Registry.request_count, self.Order_Status]
         Registry.staff_info.append (info_set)
+        print(Registry.staff_info)
 
     def member_order(self):
         for si in Registry.staff_info:
@@ -24,14 +25,28 @@ class Registry:
                 quantity = int(input("Please enter quantity"))
                 current_cost = price*quantity
                 Registry.staff_cost = current_cost
+                Registry.staff_receipt = [item, Registry.staff_cost]
+                print(Registry.staff_receipt)
 
                 #print(f"Items:{item} amounts to {current_cost}")
-
+    '''
     def update_order(self):
         for si in Registry.staff_info:
-            if
+            for Order_Status in si:
+                if Registry.staff_cost >= 500:
+                    Order_Status = "Pending"
+                else:
+                    Order_Status = "Approved"
+    '''
 
-registry1 = Registry()
+    def update_status(self):
+        if Registry.staff_cost >= 500:
+            for si in Registry.staff_info:
+                [][4] = "Pending"
+
+register1 = Registry()
+Registry.member_order(register1)
+
 #Seems to work with inputs now; Might be better to put methods in one file instead of multiple
 #Note: Class in one file and methods in another is not the same as calling as Class in another
 #file. The latter is said to just make a function that uses the Class, and is not a method itself
