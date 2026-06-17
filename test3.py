@@ -29,27 +29,24 @@ class Registry:
                 print(Registry.staff_receipt)
 
                 #print(f"Items:{item} amounts to {current_cost}")
-    '''
-    def update_order(self):
-        for si in Registry.staff_info:
-            for Order_Status in si:
-                if Registry.staff_cost >= 500:
-                    Order_Status = "Pending"
-                else:
-                    Order_Status = "Approved"
-    '''
 
     def update_status(self):
         if Registry.staff_cost >= 500:
             for si in Registry.staff_info:
                 [][4] = "Pending"
+                print (Registry.staff_info)
 
 register1 = Registry()
 Registry.member_order(register1)
+Registry.update_status(register1)
 
-#Seems to work with inputs now; Might be better to put methods in one file instead of multiple
-#Note: Class in one file and methods in another is not the same as calling as Class in another
-#file. The latter is said to just make a function that uses the Class, and is not a method itself
+
+
+#Note: item:Cost (Registry.staff_receipt) is not in a list, so it might not accurately show
+#relationship between employee Registry and their orders (member_order)
+#Note: There might be a problem with the way things are indexed; it might be difficult to reference
+#them later if they need to be changed
+
 
 
 
