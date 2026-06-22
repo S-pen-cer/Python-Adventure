@@ -1,2 +1,2 @@
 # Python-Adventure
-Python projects both academic and personal
+This repository is for Python projects both academic and personal.
