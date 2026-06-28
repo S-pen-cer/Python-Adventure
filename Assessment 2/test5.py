@@ -14,6 +14,12 @@ class Registry:
         self.status = "pending"
         Registry.registry_info = [self.date, self.name, self.id, self.status]
 
+    def assign_id(self):
+        id1 = self.name[0:3]
+        id2 = self.id[-3:]
+        full_id = id1 + id2
+        print(full_id)
+
     def get_order(self):
         item = input("Please enter product name")
         if item == "":
@@ -54,8 +60,17 @@ class Registry:
         print(f"The number of declined orders are {Registry.decline_counter}")
 
 
-register1 = Registry("Jan 1", "Roy", "abc12")
-print(register1)
+register1 = Registry("Jan 1", "Roy", "abc12", "")
+print(register1.date)
+print(register1.name)
+print(register1.id)
+print(register1.status)
+
+Registry.assign_id(register1)
+Registry.get_order(register1)
+Registry.update_status(register1)
+Registry.order_stats(register1)
+Registry.display_all(register1)
 
 
 
