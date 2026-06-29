@@ -43,12 +43,13 @@ class Registry:
         print(Registry.total_cost, self.status)
         Registry.registry_info = [self.date, self.name, self.id, self.status]
         print(Registry.registry_info)
-'''
+
     def manual_update(self):
         new_status = input("Please enter new status")
-        self.status = new_status
+        Registry.registry_info [3] = new_status
         print(Registry.registry_info)
 
+'''
     def order_stats(self):
         if self.status == "approved":
             Registry.approval_counter += 1
