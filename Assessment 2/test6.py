@@ -74,8 +74,11 @@ class Registry:
 
     def display_all(self):
         #Registry.order_count += 1
-        print(Registry.registry_info)
-        print(Registry.receipt)
+        #print(Registry.registry_info)
+        #print(Registry.receipt)
+        print(f"Date: {self.date}")
+        print(f"Name: {self.name}")
+        print(f"Order Number: {Registry.order_count}")
         print(f"The Order ID is {Registry.assigned_id}")
         print(f"The number of approved orders are {Registry.approval_counter}")
         print(f"The number of pending orders are {Registry.pending_counter}")
@@ -84,9 +87,6 @@ class Registry:
 
 
 
-
-#register1 = Registry("Jan 1", "Roy", "abc12", "")
-#register2 = Registry("Feb 1", "Gili", "def45", "")
 registry1 = Registry()
 Registry.get_order(registry1)
 Registry.update_status(registry1)
@@ -123,21 +123,6 @@ Registry.order_stats(registry4)
 Registry.tuple_setup(registry4)
 Registry.display_all(registry4)
 
-'''
-print(register2.date)
-print(register2.name)
-print(register2.id)
-print(register2.status)
-
-
-Registry.get_order(register2)
-Registry.update_status(register2)
-Registry.manual_update(register2)
-Registry.assign_id(register2)
-Registry.order_stats(register2)
-Registry.tuple_setup(register2)
-Registry.display_all(register1)
-'''
 
 
 
